@@ -3,6 +3,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
+import UserIcon from '../assets/img/user-icon.png';
+import AdminIcon from '../assets/img/admin-icon.png';
 
 const Chat = (props) => {
 
@@ -13,9 +15,9 @@ const Chat = (props) => {
     <ListItem className={classes}>
     <ListItemAvatar>
       {isQuestion ? (
-        <Avatar alt="icon" src="/static/images/avatar/1.jpg" />
+        <Avatar alt="admin-icon" src={AdminIcon} />
         ) : (
-          <Avatar alt="icon" src="/static/images/avatar/1.jpg" />
+          <Avatar alt="user-icon" src={UserIcon} />
       )}
 
     </ListItemAvatar>

@@ -16,16 +16,16 @@ export default class App extends React.Component {
   }
 
   initAnswer = () => {
-    const initDataset = this.state.dataset[currentId];
+    const initDataset = this.state.dataset[this.state.currentId];
     const initAnswers = initDataset.answers;
 
     this.setState({
-      answers: this.initAnswers
+      answers: initAnswers
     })
   }
 
   componentDidMount() {
-    this.initAnswers();
+    this.initAnswer();
   }
 
 render() {

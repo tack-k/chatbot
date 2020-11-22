@@ -1,11 +1,13 @@
 import React from 'react';
-import {Answer} from './index'
+import {Answer} from './index';
 
-const AnswerList = () => {
+const AnswerList = (props) => {
 
   return (
     <div className="c-grid__answer">
-
+      {props.answers.map((value, index) => {
+       return <Answer content={value.content} key={index.toString()} />
+      })}
     </div>
   )
 }

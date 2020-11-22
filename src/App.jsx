@@ -1,5 +1,6 @@
 import React from 'react';
 import defaultDataset from './dataset';
+import './assets/styles/style.css'
 
 export default class App extends React.Ccompornent {
   constructor(props) {

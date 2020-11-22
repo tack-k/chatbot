@@ -16,8 +16,12 @@ export default class App extends React.Ccompornent {
 
 render() {
   return (
+    <section className="c-section">
+      <div className="c-box">
 
-  )
+      </div>
+    </section>
+  );
 }
 
   

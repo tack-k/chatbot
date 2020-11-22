@@ -4,7 +4,7 @@ import {Chat} from './index';
 const Chats = () => {
 
   return (
-
+<div className=""></div>
   )
 }
 

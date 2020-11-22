@@ -24,16 +24,33 @@ export default class App extends React.Component {
     })
   }
 
+  initChat = () => {
+    const initDataset = this.state.dataset[this.state.currentId];
+    const Chat = {
+      text: initDataset.question,
+      type: 'question'
+    }
+
+    const chats = this.state.chats
+    chats.push(Chat)
+
+    this.setState({
+      chats: chats
+    }) 
+
+  }
+
   componentDidMount() {
     this.initAnswer();
+    this.initChat();
   }
 
 render() {
   return (
     <section className="c-section">
       <div className="c-box">
-        <Chats />
-        <AnswerList answers={this.state.answers}/>
+        <Chats chats={this.state.chats} />
+        <AnswerList answers={this.state.answers} />
       </div>
     </section>
   );

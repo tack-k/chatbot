@@ -13,36 +13,50 @@ export default class App extends React.Component {
       dataset: defaultDataset,
       open: false
     }
+    this.selectAnswer = this.selectedAnswer.bind(this)
   }
 
-  initAnswer = () => {
-    const initDataset = this.state.dataset[this.state.currentId];
-    const initAnswers = initDataset.answers;
+  displayNextQuestion = (nextQuestionId) => {
+    const chats = this.state.chats
+    chats.push({
+      text: this.state.dataset[nextQuestionId].question,
+      type: 'question'
+    })
 
     this.setState({
-      answers: initAnswers
+      answers: this.state.dataset[nextQuestionId].answers,
+      chats: chats,
+      currentId: nextQuestionId
     })
   }
 
-  initChat = () => {
-    const initDataset = this.state.dataset[this.state.currentId];
-    const Chat = {
-      text: initDataset.question,
-      type: 'question'
+  selectedAnswer = (selectedAnswer, nextQuestionId) => {
+    switch(true) {
+      case (nextQuestionId === 'init'):
+        this.displayNextQuestion(nextQuestionId);
+        break;
+      default:
+        const chats = this.state.chats;
+        chats.push({
+          text: selectedAnswer,
+          type: 'answer'
+        })
+
+        this.setState({
+          chats: chats
+        })
+
+        this.displayNextQuestion(nextQuestionId);
+
+        break;
     }
-
-    const chats = this.state.chats
-    chats.push(Chat)
-
-    this.setState({
-      chats: chats
-    }) 
-
   }
 
+
   componentDidMount() {
-    this.initAnswer();
-    this.initChat();
+    const initAnswer = "";
+    this.selectedAnswer(initAnswer, this.state.currentId);
+
   }
 
 render() {
@@ -50,7 +64,7 @@ render() {
     <section className="c-section">
       <div className="c-box">
         <Chats chats={this.state.chats} />
-        <AnswerList answers={this.state.answers} />
+        <AnswerList answers={this.state.answers} select={this.selectAnswer} />
       </div>
     </section>
   );

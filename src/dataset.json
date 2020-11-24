@@ -1,79 +1,57 @@
   {
   "init": {
       "answers": [
-          {"content": "仕事を依頼したい", "nextId": "job_offer"},
-          {"content": "エンジニアのキャリアについて相談したい", "nextId": "consultant"},
-          {"content": "学習コミュニティについて知りたい", "nextId": "community"},
-          {"content": "お付き合いしたい", "nextId": "dating"}
+          {"content": "地域づくりについて", "nextId": "region"},
+          {"content": "新型コロナウイルスについて", "nextId": "corona"},
+          {"content": "その他のお問い合わせ", "nextId": "contact"}
       ],
-      "question": "こんにちは！🐯トラハックへのご用件はなんでしょうか？"
+      "question": "ご用件は何でしょうか？"
   },
-  "job_offer": {
+  "region": {
       "answers": [
-          {"content": "Webサイトを制作してほしい", "nextId": "website"},
-          {"content": "Webアプリを開発してほしい", "nextId": "webapp"},
-          {"content": "自動化ツールを作ってほしい", "nextId": "automation_tool"},
-          {"content": "その他", "nextId": "other_jobs"}
+          {"content": "全国の地域づくりの事例が知りたい", "nextId": "https://www.jcrd.jp/publications/"},
+          {"content": "長野県取り組みを知りたい", "nextId": "nagano"},
+          {"content": "最初の質問に戻る", "nextId": "init"},
+          {"content": "問い合わせる", "nextId": "contact"}
       ],
-      "question": "どのようなお仕事でしょうか？"
+      "question": "どのような内容でしょうか？"
   },
-  "website": {
+  "nagano": {
       "answers": [
+          {"content": "長野県地域おこし協力隊の取り組みを知りたい", "nextId": "https://flato.jp/media/interview/yutaka-sugiyama/"},
+          {"content": "シニアの取り組みを知りたい", "nextId": "https://nicesenior.or.jp/publish/jireishu/"},
+          {"content": "最初の質問に戻る", "nextId": "init"},
+          {"content": "問い合わせる", "nextId": "contact"}
+      ],
+      "question": "長野県の取り組みについてですね。"
+  },
+  "corona": {
+      "answers": [
+          {"content": "全国の感染状況", "nextId": "https://www3.nhk.or.jp/news/special/coronavirus/data/"},
+          {"content": "対策アプリについて", "nextId": "app"},
           {"content": "問い合わせる", "nextId": "contact"},
           {"content": "最初の質問に戻る", "nextId": "init"}
       ],
-      "question": "Webサイト細作についてですね。コチラからお問い合わせできます。"
+      "question": "どのような内容でしょうか？"
   },
-  "webapp": {
+  "app": {
       "answers": [
-          {"content": "問い合わせる", "nextId": "contact"},
+          {"content": "COCOA", "nextId": "cocoa"},
+          {"content": "NewsDigest", "nextId": "news_digest"},
           {"content": "最初の質問に戻る", "nextId": "init"}
       ],
-      "question": "Webアプリ開発についてですね。コチラからお問い合わせできます。"
+      "question": "どのアプリについて知りたいですか?"
   },
-  "automation_tool": {
+  "cocoa": {
       "answers": [
-          {"content": "問い合わせる", "nextId": "contact"},
           {"content": "最初の質問に戻る", "nextId": "init"}
       ],
-      "question": "自動化ツール開発についてですね。コチラからお問い合わせできます。"
+      "question": "新型コロナウイルス感染症の陽性者と接触した可能性について通知を受けることができます"
   },
-  "other_jobs": {
+  "news_digest": {
       "answers": [
-          {"content": "問い合わせる", "nextId": "contact"},
           {"content": "最初の質問に戻る", "nextId": "init"}
       ],
-      "question": "その他についてですね。コチラからお問い合わせできます。"
-  },
-  "consultant": {
-      "answers": [
-          {"content": "YouTubeで動画を見る", "nextId": "https://www.youtube.com/channel/UC-bOAxx-YOsviSmqh8COR0w"},
-          {"content": "学習コミュニティについて知りたい", "nextId": "community"},
-          {"content": "最初の質問に戻る", "nextId": "init"}
-      ],
-      "question": "トラハックは普段からYouTubeでキャリアについて発信しています。また、僕が運営するエンジニア向け学習コミュニティ内でも相談に乗っていますよ。"
-  },
-  "community": {
-      "answers": [
-          {"content": "どんな活動をしているの？", "nextId": "community_activity"},
-          {"content": "コミュニティに参加したい", "nextId": "https://torahack.web.app/community/"},
-          {"content": "最初の質問に戻る", "nextId": "init"}
-      ],
-      "question": "2020年3月から学習コミュニティを始めました！🎉Webエンジニアへの転職を目指す人向けに、プログラミングを教えたりキャリアの相談に乗っています。"
-  },
-  "community_activity": {
-      "answers": [
-          {"content": "さらに詳細を知りたい", "nextId": "https://youtu.be/tIzE7hUDbBM"},
-          {"content": "コミュニティに参加したい", "nextId": "https://torahack.web.app/community/"},
-          {"content": "最初の質問に戻る", "nextId": "init"}
-      ],
-      "question": "フロントエンド向けの教材の提供、キャリアや勉強法に関するメルマガの配信、週1のオンライン作業会などを開催しています！\n詳細はYouTube動画で紹介しています。"
-  },
-  "dating": {
-      "answers": [
-          {"content": "DMする", "nextId": "https://twitter.com/torahack_"},
-          {"content": "最初の質問に戻る", "nextId": "init"}
-      ],
-      "question": "まずは一緒にランチでもいかがですか？DMしてください😘"
+      "question": "GPSによる位置情報を用いて現在地周辺で感染事例のあるピンポイントな場所をチェックできます"
   }
 }

@@ -22,4 +22,3 @@ export const addDataset = functions.https.onRequest(async (req: any, res: any) =
    sendResponse(res, 200, {message: 'Successfully added dataset!'})
  }
 })
-
